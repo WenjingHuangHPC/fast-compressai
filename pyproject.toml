@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fast-compressai"
+version = "0.1.0"
+description = "An extensible acceleration layer for CompressAI-style learned compression models"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+]
+
+[project.optional-dependencies]
+compressai = [
+    "compressai>=1.2",
+]
+
+tests = [
+    "pytest>=7",
+]
+
+[tool.setuptools]
+include-package-data = true
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+fast_compressai = ["coders/cuda/*.cpp", "coders/cuda/*.cu", "coders/cuda/*.cuh"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

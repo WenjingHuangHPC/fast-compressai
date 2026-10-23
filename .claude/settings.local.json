@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import sys; print\\('python_executable:', sys.executable\\); print\\('python_version:', sys.version\\)\")",
+      "Bash(python *)",
+      "Bash(CUDA_VISIBLE_DEVICES=2 python *)",
+      "Skill(claude-api)"
+    ]
+  }
+}

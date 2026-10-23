@@ -1,0 +1,82 @@
+{
+  "budget_met": true,
+  "epsilon": 0.1,
+  "kind": "fast_compressai_precision_recovery",
+  "recovery_order": [
+    "compressai.models.google.FactorizedPrior:g_a.0",
+    "compressai.models.google.FactorizedPrior:g_s.6",
+    "compressai.models.google.FactorizedPrior:g_s.4",
+    "compressai.models.google.FactorizedPrior:g_s.0",
+    "compressai.models.google.FactorizedPrior:g_s.2",
+    "compressai.models.google.FactorizedPrior:g_s.5",
+    "compressai.models.google.FactorizedPrior:g_a.4"
+  ],
+  "selection_config": "/hwj/project/fast-compressai/examples/precision_configs/FactorizedPrior/kodak-20261023T044106.023033Z.json",
+  "steps": [
+    {
+      "budget_met": false,
+      "changed_instance_id": null,
+      "from_precision": null,
+      "step": 0,
+      "to_precision": null,
+      "validated_rd_cost": 0.3717667394518881
+    },
+    {
+      "budget_met": false,
+      "changed_instance_id": "compressai.models.google.FactorizedPrior:g_a.0",
+      "from_precision": "fp8",
+      "step": 1,
+      "to_precision": "fp16",
+      "validated_rd_cost": 0.33438188319487944
+    },
+    {
+      "budget_met": false,
+      "changed_instance_id": "compressai.models.google.FactorizedPrior:g_s.6",
+      "from_precision": "fp8",
+      "step": 2,
+      "to_precision": "fp16",
+      "validated_rd_cost": 0.2862046409158267
+    },
+    {
+      "budget_met": false,
+      "changed_instance_id": "compressai.models.google.FactorizedPrior:g_s.4",
+      "from_precision": "fp8",
+      "step": 3,
+      "to_precision": "fp16",
+      "validated_rd_cost": 0.2491996932534732
+    },
+    {
+      "budget_met": false,
+      "changed_instance_id": "compressai.models.google.FactorizedPrior:g_s.0",
+      "from_precision": "fp8",
+      "step": 4,
+      "to_precision": "fp16",
+      "validated_rd_cost": 0.19972068553252592
+    },
+    {
+      "budget_met": false,
+      "changed_instance_id": "compressai.models.google.FactorizedPrior:g_s.2",
+      "from_precision": "fp8",
+      "step": 5,
+      "to_precision": "fp16",
+      "validated_rd_cost": 0.1677034545449771
+    },
+    {
+      "budget_met": false,
+      "changed_instance_id": "compressai.models.google.FactorizedPrior:g_s.5",
+      "from_precision": "fp8",
+      "step": 6,
+      "to_precision": "fp16",
+      "validated_rd_cost": 0.15507680659575834
+    },
+    {
+      "budget_met": true,
+      "changed_instance_id": "compressai.models.google.FactorizedPrior:g_a.4",
+      "from_precision": "fp8",
+      "step": 7,
+      "to_precision": "fp16",
+      "validated_rd_cost": 0.08132602028435822
+    }
+  ],
+  "validated_rd_cost": 0.08132602028435822
+}

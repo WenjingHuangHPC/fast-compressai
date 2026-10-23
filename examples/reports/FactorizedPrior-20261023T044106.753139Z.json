@@ -1,0 +1,112 @@
+{
+  "acceleration_report": {
+    "adapter_family": "compression_model",
+    "budget_met": true,
+    "candidate_latency_ms": null,
+    "coder_status": "warp_div",
+    "message": "CAIEC selected and applied 14 operator-instance candidates; full RD Cost=0.081326, budget_met=True.",
+    "model_class": "FactorizedPrior",
+    "p_ch": 16,
+    "p_ch_applied": true,
+    "precision_config_path": "/hwj/project/fast-compressai/examples/precision_configs/FactorizedPrior/kodak-20261023T044106.023033Z.json",
+    "precision_selection_status": "selected",
+    "profiling_status": "measured",
+    "psnr_drop_db": null,
+    "quality_budget": 0.1,
+    "quality_metric": "psnr_drop_db",
+    "rd_cost": 0.08132602028435822,
+    "recovered_instance_count": 7,
+    "reference_latency_ms": null,
+    "runtime_status": "applied",
+    "selected_candidate": "caiec-mixed",
+    "sensitivity_probe_count": 28,
+    "speedup": null,
+    "status": "coder_applied",
+    "unavailable_probe_count": 0
+  },
+  "dataset": {
+    "denormalization": "multiply_by_255",
+    "fingerprint": "3dac0fc9bc85f10b124ad6b8ede8e195683142aa2c01c928dcd56a6ec6a51769",
+    "name": "kodak",
+    "normalization": "divide_by_255",
+    "samples": 24
+  },
+  "input": {
+    "data_range": 255.0,
+    "device": "cuda",
+    "model": "FactorizedPrior",
+    "p_ch": 16,
+    "quality": 1,
+    "repeats": 10,
+    "shape": [
+      1,
+      3,
+      512,
+      768
+    ],
+    "warmup": 2
+  },
+  "payload": {
+    "accelerated_bpp": 0.0908203125,
+    "accelerated_bytes_device_local": 13392,
+    "reference_bpp": 0.054877387152777776,
+    "reference_bytes_device_local": 8092,
+    "type": "WarpDivPayload"
+  },
+  "precision_config_path": "/hwj/project/fast-compressai/examples/precision_configs/FactorizedPrior/kodak-20261023T044106.023033Z.json",
+  "quality": {
+    "accelerated_psnr_db": 24.689945877246277,
+    "max_abs_error_between_outputs": 0.16804969310760498,
+    "mean_abs_error_between_outputs": 0.010913090780377388,
+    "psnr_delta_db": -0.05332724765045427,
+    "reference_psnr_db": 24.74327312489673
+  },
+  "summary": {
+    "accelerated": {
+      "bpp": 0.0908203125,
+      "compress_throughput_gb_s": 0.8278451239381103,
+      "decompress_throughput_gb_s": 1.3023929660907665,
+      "psnr_db": 24.689945877246277
+    },
+    "compress_speedup": 2.9770679422747683,
+    "decompress_speedup": 6.341599692559608,
+    "reference": {
+      "bpp": 0.054877387152777776,
+      "compress_throughput_gb_s": 0.27807397748052615,
+      "decompress_throughput_gb_s": 0.20537293888461952,
+      "psnr_db": 24.74327312489673
+    }
+  },
+  "timings": [
+    {
+      "median_ms": 16.96883700788021,
+      "min_ms": 16.623960807919502,
+      "operation": "reference_compress",
+      "throughput_bytes_per_call": 4718592,
+      "throughput_gb_s": 0.27807397748052615
+    },
+    {
+      "median_ms": 22.975724190473557,
+      "min_ms": 22.630902007222176,
+      "operation": "reference_decompress",
+      "throughput_bytes_per_call": 4718592,
+      "throughput_gb_s": 0.20537293888461952
+    },
+    {
+      "median_ms": 5.699848756194115,
+      "min_ms": 5.659883841872215,
+      "operation": "warp_div_compress",
+      "speedup_vs_reference": 2.9770679422747683,
+      "throughput_bytes_per_call": 4718592,
+      "throughput_gb_s": 0.8278451239381103
+    },
+    {
+      "median_ms": 3.6230171099305153,
+      "min_ms": 3.60073521733284,
+      "operation": "warp_div_decompress",
+      "speedup_vs_reference": 6.341599692559608,
+      "throughput_bytes_per_call": 4718592,
+      "throughput_gb_s": 1.3023929660907665
+    }
+  ]
+}

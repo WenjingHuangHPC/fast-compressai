@@ -1,0 +1,7 @@
+torch>=2.0
+
+[compressai]
+compressai>=1.2
+
+[tests]
+pytest>=7

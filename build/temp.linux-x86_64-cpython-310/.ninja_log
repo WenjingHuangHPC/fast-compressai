@@ -1,0 +1,10 @@
+# ninja log v7
+4	15731	1791995097485919979	/hwj/project/fast-compressai/build/temp.linux-x86_64-cpython-310/src/fast_compressai/coders/cuda/ans_gpu.o	994bb36d0aac036c
+8	40574	1791995660914692463	/hwj/project/fast-compressai/build/temp.linux-x86_64-cpython-310/src/fast_compressai/coders/cuda/warp_index_check.o	57016eb4a120e576
+6	47146	1791995660912582197	/hwj/project/fast-compressai/build/temp.linux-x86_64-cpython-310/src/fast_compressai/coders/cuda/warp_ans_kernel.o	6dad5d36ce0ec9d3
+7	47696	1791995660913640301	/hwj/project/fast-compressai/build/temp.linux-x86_64-cpython-310/src/fast_compressai/coders/cuda/warp_ans_kernel_v2.o	63eac2a2a700b4eb
+34	50891	1791995581425868652	/hwj/project/fast-compressai/build/temp.linux-x86_64-cpython-310/src/fast_compressai/coders/cuda/warp_ans_kernel.o	6dad5d36ce0ec9d3
+36	46548	1791996002752414813	/hwj/project/fast-compressai/build/temp.linux-x86_64-cpython-310/src/fast_compressai/coders/cuda/warp_ans_kernel.o	6dad5d36ce0ec9d3
+39	48112	1791996566201053061	/hwj/project/fast-compressai/build/temp.linux-x86_64-cpython-310/src/fast_compressai/coders/cuda/warp_ans_kernel_v2.o	63eac2a2a700b4eb
+35	45845	1791996237593197699	/hwj/project/fast-compressai/build/temp.linux-x86_64-cpython-310/src/fast_compressai/coders/cuda/warp_ans_kernel.o	6dad5d36ce0ec9d3
+38	48373	1791996801047295140	/hwj/project/fast-compressai/build/temp.linux-x86_64-cpython-310/src/fast_compressai/coders/cuda/warp_ans_kernel_v2.o	63eac2a2a700b4eb

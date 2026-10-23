@@ -1,0 +1,7 @@
+Fast-CompressAI includes CUDA WarpANS V2 warp_div source adapted from the user's authorized migration from:
+
+  CompressAI-Science/compressai/cpp_exts/rans_gpu
+
+The migrated subset implements WarpANS V2 fast-division encoding with V1-compatible decode and packing helpers. Original source comments identify InterDigital Communications, Inc. copyright (c) 2021-2025 and BSD-3-Clause-style conditions in the source repository LICENSE. This NOTICE records provenance and does not create or broaden any license grant. Redistribution is subject to the applicable original notices and the authorization granted by the project user.
+
+The RANS GPU primitive code in this migrated subset is adapted from the above source tree. The separate third_party/ryg_rans component in the source repository has its own CC0 notice; it is not included in this migration unless separately identified in the file inventory.

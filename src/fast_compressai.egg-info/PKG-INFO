@@ -1,0 +1,73 @@
+Metadata-Version: 2.4
+Name: fast-compressai
+Version: 0.1.0
+Summary: An extensible acceleration layer for CompressAI-style learned compression models
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: torch>=2.0
+Provides-Extra: compressai
+Requires-Dist: compressai>=1.2; extra == "compressai"
+Provides-Extra: tests
+Requires-Dist: pytest>=7; extra == "tests"
+
+# Fast-CompressAI
+
+Fast-CompressAI is an extensible acceleration layer for CompressAI-style learned compression models. Its target workflow is `accelerate(model, P=..., budget=...)`: the library profiles candidate implementations, chooses internal operator precision under a quality constraint, selects coding granularity, and applies a runtime plan while retaining an FP32 reference fallback.
+
+## Current Status
+
+The repository currently provides an installable PyTorch package, CompressAI compatibility inspection, an explicit operator registry, reporting-only precision policies, a CompressAI RANS adapter, and versioned coder/profile schemas. It does **not** yet perform automatic profiling, budget-aware precision selection, GA-ANS coding, pipeline scheduling, or runtime operator replacement. `accelerate()` currently returns a reference wrapper and marks these stages as not implemented; it does not claim speedup.
+
+## Install
+
+```bash
+python -m pip install -e .
+```
+
+CompressAI integration is optional:
+
+```bash
+python -m pip install -e '.[compressai]'
+```
+
+## Public API Shape
+
+```python
+import fast_compressai
+
+model = MyCompressAIModel(...)
+fast_model = fast_compressai.accelerate(
+    model,
+    P=8,
+    budget=0.1,
+    device="cuda",
+)
+
+strings = fast_model.compress(x)
+x_hat = fast_model.decompress(strings, shape)
+print(fast_model.acceleration_report.to_dict())
+```
+
+`P` maps to GA-ANS `p_ch`: the number of latent channels per independently coded chunk. `budget` is a non-negative quality/RD constraint (the paper uses `epsilon`). These are separate from the internal inference-time co-design constraint comparing entropy-coding time with inference time. The legal `p_ch` range and the exact quality metric are not yet defined by this MVP and require a profile/model contract.
+
+The library will choose operator precision internally based on registered candidates, capability checks, profiling, and the quality budget. Users should not need to supply module paths or a precision map. At present that automatic process and runtime application are not implemented, and the returned wrapper remains reference-only. The legacy `compile()`/`optimize()` API remains available for compatibility inspection and explicit low-level experiments; it is not the automatic acceleration workflow.
+
+## Architecture
+
+The intended internal flow is:
+
+```text
+accelerate(model, P, budget, device, ...)
+    -> model adapter and operator inventory
+    -> operator/coder profiling and quality measurements
+    -> budget-aware precision selection with FP32 fallback
+    -> GA-ANS p_ch selection and inference/coding co-design
+    -> runtime application and sequential/overlapped scheduling
+    -> correctness, quality, and measured performance report
+```
+
+`PrecisionPolicy`, `CoderBackend`, and `PipelineScheduler` are independent replaceable boundaries. The current precision policy is reporting-only. The current coder is a one-shot CompressAI RANS-backed adapter, not GA-ANS or a standalone ANS implementation; it expects callers to provide matching CDF/index/offset metadata.
+
+## Profile Schema
+
+Versioned `ProfileRecord` and `ProfileSet` objects define JSON-safe inputs for future operator-precision and coder-granularity selectors. Records carry model/operator or coder candidate identity, context, measurements, provenance (`measured`, `estimated`, or `imported`), and unavailable reasons. The schema is in place; automatic collection and profile-driven selection are future stages.
