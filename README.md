@@ -15,6 +15,17 @@ FAST_COMPRESSAI_BUILD_CUDA=1 TORCH_CUDA_ARCH_LIST=9.0 python setup.py build_ext 
 python examples/balle_example.py --image ./image.png --quality 1 --p-ch 4
 ```
 
+For Kodak calibration, omit `--p-ch` to automatically select the smallest P whose measured encoding time is close to the final mixed-precision model's inference time. The selector uses a relative-time tolerance and detects a large-P timing plateau as measurement variation; it does not treat small noisy changes in the plateau as algorithmic improvements:
+
+```bash
+python examples/balle_example.py \
+    --kodak /path/to/Kodak_24x3x512x768.f32 \
+    --weights /path/to/bmshj2018-factorized-1.pth \
+    --precision-budget 0.1
+```
+
+Passing `--p-ch N` keeps P fixed and disables the automatic P sweep.
+
 The example loads a local `bmshj2018-factorized` checkpoint and pads the RGB image to the model's downsampling factor. It uses the default `warp_div` coder and prints a compact reference-versus-accelerated comparison containing:
 
 - compression and decompression throughput in decimal **GB/s**;

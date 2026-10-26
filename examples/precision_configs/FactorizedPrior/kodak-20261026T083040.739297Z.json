@@ -18,8 +18,8 @@
       "logical_op": "conv2d",
       "module_path": "g_a.0",
       "precision": "fp16",
-      "probe_rd_cost": 0.05849921212258468,
-      "probe_thr_gain": -0.7153040842912441,
+      "probe_rd_cost": 0.058359994597994555,
+      "probe_thr_gain": 0.13383632273605006,
       "selection_reason": [
         "recovered_to_fp16_or_fp32"
       ]
@@ -43,8 +43,8 @@
       "logical_op": "gdn",
       "module_path": "g_a.1",
       "precision": "fp8",
-      "probe_rd_cost": -0.0012066281170786289,
-      "probe_thr_gain": -1.0328101794497462,
+      "probe_rd_cost": -0.0019882814611458296,
+      "probe_thr_gain": -2.664567559616631,
       "selection_reason": [
         "selected_fp8_candidate"
       ]
@@ -68,8 +68,8 @@
       "logical_op": "conv2d",
       "module_path": "g_a.2",
       "precision": "fp8",
-      "probe_rd_cost": 0.013679516835871893,
-      "probe_thr_gain": -4.198857769577221,
+      "probe_rd_cost": 0.014021233186710644,
+      "probe_thr_gain": -6.931067890297879,
       "selection_reason": [
         "selected_fp8_candidate"
       ]
@@ -93,8 +93,8 @@
       "logical_op": "gdn",
       "module_path": "g_a.3",
       "precision": "fp8",
-      "probe_rd_cost": 0.0008630752563476562,
-      "probe_thr_gain": -1.1259793566305394,
+      "probe_rd_cost": 0.0009845052814372076,
+      "probe_thr_gain": -0.16043680891490109,
       "selection_reason": [
         "selected_fp8_candidate"
       ]
@@ -117,8 +117,8 @@
       "logical_op": "conv2d",
       "module_path": "g_a.4",
       "precision": "fp16",
-      "probe_rd_cost": 0.016082942343228514,
-      "probe_thr_gain": -0.44904889564393957,
+      "probe_rd_cost": 0.01698696291777687,
+      "probe_thr_gain": -1.4009360823009223,
       "selection_reason": [
         "recovered_to_fp16_or_fp32"
       ]
@@ -142,8 +142,8 @@
       "logical_op": "gdn",
       "module_path": "g_a.5",
       "precision": "fp8",
-      "probe_rd_cost": -5.245208740234375e-05,
-      "probe_thr_gain": -1.002729620558183,
+      "probe_rd_cost": 0.00014991242951731078,
+      "probe_thr_gain": -0.5764006396857311,
       "selection_reason": [
         "selected_fp8_candidate"
       ]
@@ -167,8 +167,8 @@
       "logical_op": "conv2d",
       "module_path": "g_a.6",
       "precision": "fp8",
-      "probe_rd_cost": 0.0099770425324375,
-      "probe_thr_gain": -0.2940190785741277,
+      "probe_rd_cost": 0.010800136155870586,
+      "probe_thr_gain": 0.44923766359874095,
       "selection_reason": [
         "selected_fp8_candidate"
       ]
@@ -192,7 +192,7 @@
       "module_path": "g_s.0",
       "precision": "fp16",
       "probe_rd_cost": 0.03974199295043945,
-      "probe_thr_gain": -39.59708870880878,
+      "probe_thr_gain": -180.4583286330146,
       "selection_reason": [
         "recovered_to_fp16_or_fp32"
       ]
@@ -217,7 +217,7 @@
       "module_path": "g_s.1",
       "precision": "fp8",
       "probe_rd_cost": 0.011696815490722656,
-      "probe_thr_gain": -0.9056161767559125,
+      "probe_thr_gain": -0.11137211704567829,
       "selection_reason": [
         "selected_fp8_candidate"
       ]
@@ -241,7 +241,7 @@
       "module_path": "g_s.2",
       "precision": "fp16",
       "probe_rd_cost": 0.03404855728149414,
-      "probe_thr_gain": -40.02165978472486,
+      "probe_thr_gain": -194.9323729199707,
       "selection_reason": [
         "recovered_to_fp16_or_fp32"
       ]
@@ -266,7 +266,7 @@
       "module_path": "g_s.3",
       "precision": "fp8",
       "probe_rd_cost": 0.012392997741699219,
-      "probe_thr_gain": -0.853677602340597,
+      "probe_thr_gain": -0.049721630535040084,
       "selection_reason": [
         "selected_fp8_candidate"
       ]
@@ -290,7 +290,7 @@
       "module_path": "g_s.4",
       "precision": "fp16",
       "probe_rd_cost": 0.04184246063232422,
-      "probe_thr_gain": -42.344931063046864,
+      "probe_thr_gain": -201.94615978429408,
       "selection_reason": [
         "recovered_to_fp16_or_fp32"
       ]
@@ -314,7 +314,7 @@
       "module_path": "g_s.5",
       "precision": "fp16",
       "probe_rd_cost": 0.02479076385498047,
-      "probe_thr_gain": -3.514642940720571,
+      "probe_thr_gain": -2.8656438773095156,
       "selection_reason": [
         "recovered_to_fp16_or_fp32"
       ]
@@ -338,7 +338,7 @@
       "module_path": "g_s.6",
       "precision": "fp16",
       "probe_rd_cost": 0.04656791687011719,
-      "probe_thr_gain": -39.338790820194845,
+      "probe_thr_gain": -189.10290269566045,
       "selection_reason": [
         "recovered_to_fp16_or_fp32"
       ]
@@ -347,7 +347,7 @@
   "budget_met": true,
   "catalog_fingerprint": "e14ad2d14aa9c86ab6d98cbbe18b0ada1e42a530e6a594e4d7df3f91cc3c3856",
   "coder": "warp_div",
-  "created_utc": "20261023T044106.022037Z",
+  "created_utc": "20261026T083025.667463Z",
   "dataset_fingerprint": "3dac0fc9bc85f10b124ad6b8ede8e195683142aa2c01c928dcd56a6ec6a51769",
   "dataset_name": "kodak",
   "dataset_sample_count": 24,
@@ -360,7 +360,438 @@
   "kind": "fast_compressai_precision_config",
   "model_fingerprint": "2c494b2078bebfbd0f8a17bbe27949ac5212fdcee49c5182af05166c4dd6a216",
   "model_name": "FactorizedPrior",
-  "p_ch": 16,
+  "p_ch": 1,
+  "p_ch_selection": {
+    "measurements": [
+      {
+        "bpp": 0.38798466435185186,
+        "codec_to_inference_ratio": 0.9395163267064777,
+        "codec_total_ms": 5.9148640632629395,
+        "compress_codec_ms": 3.4608479738235474,
+        "compress_inference_ms": 4.459151983261108,
+        "compress_latency_ms": 9.529937990009785,
+        "decompress_codec_ms": 2.454016089439392,
+        "decompress_inference_ms": 1.8364959955215454,
+        "decompress_latency_ms": 4.913279786705971,
+        "forward_latency_ms": 7.008722051978111,
+        "inference_total_ms": 6.295647978782654,
+        "p_ch": 1,
+        "passed_balance": true,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -26.506592449301145,
+        "relative_time_error": 0.06048367329352233,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": true,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.2189670138888889,
+        "codec_to_inference_ratio": 0.8770241168403856,
+        "codec_total_ms": 5.507936000823975,
+        "compress_codec_ms": 3.0757280588150024,
+        "compress_inference_ms": 4.432512044906616,
+        "compress_latency_ms": 8.48635658621788,
+        "decompress_codec_ms": 2.432207942008972,
+        "decompress_inference_ms": 1.8477439880371094,
+        "decompress_latency_ms": 4.85188327729702,
+        "forward_latency_ms": 6.932422518730164,
+        "inference_total_ms": 6.280256032943726,
+        "p_ch": 2,
+        "passed_balance": false,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -26.755028313303,
+        "relative_time_error": 0.12297588315961439,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.16261574074074073,
+        "codec_to_inference_ratio": 0.956000871842519,
+        "codec_total_ms": 6.003807902336121,
+        "compress_codec_ms": 3.5220799446105957,
+        "compress_inference_ms": 4.455744028091431,
+        "compress_latency_ms": 8.917024359107018,
+        "decompress_codec_ms": 2.481727957725525,
+        "decompress_inference_ms": 1.8243840336799622,
+        "decompress_latency_ms": 4.924622364342213,
+        "forward_latency_ms": 6.953747011721134,
+        "inference_total_ms": 6.280128061771393,
+        "p_ch": 3,
+        "passed_balance": true,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -26.88424442736255,
+        "relative_time_error": 0.04399912815748097,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.13480179398148148,
+        "codec_to_inference_ratio": 0.9334536069810933,
+        "codec_total_ms": 5.870288133621216,
+        "compress_codec_ms": 3.4112000465393066,
+        "compress_inference_ms": 4.449887990951538,
+        "compress_latency_ms": 9.22788493335247,
+        "decompress_codec_ms": 2.459088087081909,
+        "decompress_inference_ms": 1.8388960361480713,
+        "decompress_latency_ms": 4.999006167054176,
+        "forward_latency_ms": 7.011065259575844,
+        "inference_total_ms": 6.288784027099609,
+        "p_ch": 4,
+        "passed_balance": true,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -26.965711337169715,
+        "relative_time_error": 0.06654639301890675,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.10658998842592593,
+        "codec_to_inference_ratio": 0.895000540164354,
+        "codec_total_ms": 5.6421120166778564,
+        "compress_codec_ms": 3.133984088897705,
+        "compress_inference_ms": 4.46560001373291,
+        "compress_latency_ms": 8.618214167654514,
+        "decompress_codec_ms": 2.5081279277801514,
+        "decompress_inference_ms": 1.83843195438385,
+        "decompress_latency_ms": 4.943897947669029,
+        "forward_latency_ms": 7.045673206448555,
+        "inference_total_ms": 6.30403196811676,
+        "p_ch": 6,
+        "passed_balance": false,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -27.06769059407363,
+        "relative_time_error": 0.10499945983564596,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.0925564236111111,
+        "codec_to_inference_ratio": 1.0074809439269732,
+        "codec_total_ms": 6.307024002075195,
+        "compress_codec_ms": 3.666975975036621,
+        "compress_inference_ms": 4.466127872467041,
+        "compress_latency_ms": 9.819069877266884,
+        "decompress_codec_ms": 2.640048027038574,
+        "decompress_inference_ms": 1.7940639853477478,
+        "decompress_latency_ms": 5.040550604462624,
+        "forward_latency_ms": 7.041747681796551,
+        "inference_total_ms": 6.260191857814789,
+        "p_ch": 8,
+        "passed_balance": true,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -27.129000444036368,
+        "relative_time_error": 0.0074809439269731826,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.07816116898148148,
+        "codec_to_inference_ratio": 0.9533673585603076,
+        "codec_total_ms": 5.951391935348511,
+        "compress_codec_ms": 3.3269439935684204,
+        "compress_inference_ms": 4.41812801361084,
+        "compress_latency_ms": 8.764258585870266,
+        "decompress_codec_ms": 2.6244479417800903,
+        "decompress_inference_ms": 1.8243680000305176,
+        "decompress_latency_ms": 5.027673207223415,
+        "forward_latency_ms": 6.956819444894791,
+        "inference_total_ms": 6.242496013641357,
+        "p_ch": 12,
+        "passed_balance": true,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -27.202415963040313,
+        "relative_time_error": 0.04663264143969237,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.0712890625,
+        "codec_to_inference_ratio": 1.0697110797550946,
+        "codec_total_ms": 6.729423999786377,
+        "compress_codec_ms": 4.00929594039917,
+        "compress_inference_ms": 4.470047950744629,
+        "compress_latency_ms": 10.674893856048584,
+        "decompress_codec_ms": 2.720128059387207,
+        "decompress_inference_ms": 1.8208320140838623,
+        "decompress_latency_ms": 5.302757956087589,
+        "forward_latency_ms": 7.032433524727821,
+        "inference_total_ms": 6.290879964828491,
+        "p_ch": 16,
+        "passed_balance": true,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -27.242384105644113,
+        "relative_time_error": 0.06971107975509461,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.06401909722222222,
+        "codec_to_inference_ratio": 1.0375695651156158,
+        "codec_total_ms": 6.528288006782532,
+        "compress_codec_ms": 3.7289600372314453,
+        "compress_inference_ms": 4.450511932373047,
+        "compress_latency_ms": 9.208284318447113,
+        "decompress_codec_ms": 2.7993279695510864,
+        "decompress_inference_ms": 1.8413919806480408,
+        "decompress_latency_ms": 5.278662778437138,
+        "forward_latency_ms": 6.955644115805626,
+        "inference_total_ms": 6.291903913021088,
+        "p_ch": 24,
+        "passed_balance": true,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -27.28909746356175,
+        "relative_time_error": 0.03756956511561582,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.060619212962962965,
+        "codec_to_inference_ratio": 1.096432008763508,
+        "codec_total_ms": 6.8829439878463745,
+        "compress_codec_ms": 3.9254080057144165,
+        "compress_inference_ms": 4.447711944580078,
+        "compress_latency_ms": 9.456180967390537,
+        "decompress_codec_ms": 2.957535982131958,
+        "decompress_inference_ms": 1.8298720121383667,
+        "decompress_latency_ms": 5.529683083295822,
+        "forward_latency_ms": 7.227398455142975,
+        "inference_total_ms": 6.277583956718445,
+        "p_ch": 32,
+        "passed_balance": true,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -27.312796715629297,
+        "relative_time_error": 0.09643200876350799,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.056568287037037035,
+        "codec_to_inference_ratio": 1.2332276485453533,
+        "codec_total_ms": 7.7188800573349,
+        "compress_codec_ms": 4.495408058166504,
+        "compress_inference_ms": 4.457359790802002,
+        "compress_latency_ms": 10.18093153834343,
+        "decompress_codec_ms": 3.223471999168396,
+        "decompress_inference_ms": 1.8017279505729675,
+        "decompress_latency_ms": 5.746835842728615,
+        "forward_latency_ms": 7.1202535182237625,
+        "inference_total_ms": 6.2590877413749695,
+        "p_ch": 48,
+        "passed_balance": false,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -27.342833981199725,
+        "relative_time_error": 0.23322764854535327,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.05457899305555555,
+        "codec_to_inference_ratio": 1.3554866272239194,
+        "codec_total_ms": 8.067856192588806,
+        "compress_codec_ms": 4.561936140060425,
+        "compress_inference_ms": 4.4426398277282715,
+        "compress_latency_ms": 10.665935464203358,
+        "decompress_codec_ms": 3.5059200525283813,
+        "decompress_inference_ms": 1.5093600153923035,
+        "decompress_latency_ms": 5.7285381481051445,
+        "forward_latency_ms": 6.879044696688652,
+        "inference_total_ms": 5.951999843120575,
+        "p_ch": 64,
+        "passed_balance": false,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -27.358381490147966,
+        "relative_time_error": 0.35548662722391944,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.05237268518518518,
+        "codec_to_inference_ratio": 1.6939376654092317,
+        "codec_total_ms": 10.114976167678833,
+        "compress_codec_ms": 6.052880048751831,
+        "compress_inference_ms": 4.452208042144775,
+        "compress_latency_ms": 11.517075821757317,
+        "decompress_codec_ms": 4.062096118927002,
+        "decompress_inference_ms": 1.5190719962120056,
+        "decompress_latency_ms": 6.403122097253799,
+        "forward_latency_ms": 6.956875324249268,
+        "inference_total_ms": 5.971280038356781,
+        "p_ch": 96,
+        "passed_balance": false,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -27.376302168062427,
+        "relative_time_error": 0.6939376654092317,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.052553530092592594,
+        "codec_to_inference_ratio": 1.9765807469164538,
+        "codec_total_ms": 12.348032236099243,
+        "compress_codec_ms": 6.46065616607666,
+        "compress_inference_ms": 4.465520143508911,
+        "compress_latency_ms": 12.19622977077961,
+        "decompress_codec_ms": 5.887376070022583,
+        "decompress_inference_ms": 1.7816479802131653,
+        "decompress_latency_ms": 8.486323058605194,
+        "forward_latency_ms": 6.992793641984463,
+        "inference_total_ms": 6.247168123722076,
+        "p_ch": 128,
+        "passed_balance": false,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -27.374805115625534,
+        "relative_time_error": 0.9765807469164538,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      },
+      {
+        "bpp": 0.050455729166666664,
+        "codec_to_inference_ratio": 2.6885744583182034,
+        "codec_total_ms": 16.62614417076111,
+        "compress_codec_ms": 10.347887992858887,
+        "compress_inference_ms": 4.669519901275635,
+        "compress_latency_ms": 16.074709594249725,
+        "decompress_codec_ms": 6.278256177902222,
+        "decompress_inference_ms": 1.5144799947738647,
+        "decompress_latency_ms": 8.912310004234314,
+        "forward_latency_ms": 7.909285835921764,
+        "inference_total_ms": 6.1839998960494995,
+        "p_ch": 192,
+        "passed_balance": false,
+        "payload_semantics": "device_local_warp_div_packed_payload",
+        "psnr_db": 26.095407009124756,
+        "rd_cost": -27.392496522313937,
+        "relative_time_error": 1.6885744583182034,
+        "repetitions_per_sample": 1,
+        "sample_count": 24,
+        "selected": false,
+        "warmup": 1
+      }
+    ],
+    "plateau": {
+      "detected": true,
+      "end_p_ch": 6,
+      "interpretation": "algorithmic improvement is not distinguishable from measurement variation",
+      "pairs": [
+        {
+          "from_p_ch": 1,
+          "relative_delta": 0.06879753415913377,
+          "to_p_ch": 2
+        },
+        {
+          "from_p_ch": 2,
+          "relative_delta": 0.09002862441356703,
+          "to_p_ch": 3
+        },
+        {
+          "from_p_ch": 3,
+          "relative_delta": 0.022239180681139278,
+          "to_p_ch": 4
+        },
+        {
+          "from_p_ch": 4,
+          "relative_delta": 0.03886966222944221,
+          "to_p_ch": 6
+        },
+        {
+          "from_p_ch": 6,
+          "relative_delta": 0.11784806530460326,
+          "to_p_ch": 8
+        },
+        {
+          "from_p_ch": 8,
+          "relative_delta": 0.05638666772310859,
+          "to_p_ch": 12
+        },
+        {
+          "from_p_ch": 12,
+          "relative_delta": 0.13073110843477073,
+          "to_p_ch": 16
+        },
+        {
+          "from_p_ch": 16,
+          "relative_delta": 0.029889035526700383,
+          "to_p_ch": 24
+        },
+        {
+          "from_p_ch": 24,
+          "relative_delta": 0.05432603167865369,
+          "to_p_ch": 32
+        },
+        {
+          "from_p_ch": 32,
+          "relative_delta": 0.12145036643688917,
+          "to_p_ch": 48
+        },
+        {
+          "from_p_ch": 48,
+          "relative_delta": 0.04521072133026476,
+          "to_p_ch": 64
+        },
+        {
+          "from_p_ch": 64,
+          "relative_delta": 0.2537377868696429,
+          "to_p_ch": 96
+        },
+        {
+          "from_p_ch": 96,
+          "relative_delta": 0.22076730892909735,
+          "to_p_ch": 128
+        },
+        {
+          "from_p_ch": 128,
+          "relative_delta": 0.3464610273817462,
+          "to_p_ch": 192
+        }
+      ],
+      "start_p_ch": 3
+    },
+    "reason": "first_relative_error_pass",
+    "relative_error": 0.06048367329352233,
+    "selected_p_ch": 1,
+    "status": "auto_selected"
+  },
   "probe_records": [
     {
       "candidate_key": {
@@ -375,12 +806,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 2.979697659611702,
+      "forward_latency_ms": 3.1296852976083755,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.0",
       "logical_op": "conv2d",
       "module_path": "g_a.0",
-      "probe_rd_cost": 0.05849921212258468,
-      "probe_thr_gain": -0.7153040842912441,
+      "probe_rd_cost": 0.058359994597994555,
+      "probe_thr_gain": 0.13383632273605006,
       "status": "measured"
     },
     {
@@ -396,12 +827,12 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 3.111938014626503,
+      "forward_latency_ms": 3.3416254445910454,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.0",
       "logical_op": "conv2d",
       "module_path": "g_a.0",
-      "probe_rd_cost": 19.3196702606941,
-      "probe_thr_gain": -1.412756520302167,
+      "probe_rd_cost": 19.567897979407196,
+      "probe_thr_gain": -0.8728901098658031,
       "status": "measured"
     },
     {
@@ -417,12 +848,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 3.0398983508348465,
+      "forward_latency_ms": 3.718816675245762,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.1",
       "logical_op": "gdn",
       "module_path": "g_a.1",
-      "probe_rd_cost": -0.0012066281170786289,
-      "probe_thr_gain": -1.0328101794497462,
+      "probe_rd_cost": -0.0019882814611458296,
+      "probe_thr_gain": -2.664567559616631,
       "status": "measured"
     },
     {
@@ -438,12 +869,12 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 3.204748034477234,
+      "forward_latency_ms": 3.344743512570858,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.1",
       "logical_op": "gdn",
       "module_path": "g_a.1",
-      "probe_rd_cost": 13.148663337417332,
-      "probe_thr_gain": -1.9022483582805916,
+      "probe_rd_cost": 13.378323712570806,
+      "probe_thr_gain": -0.8877010906951384,
       "status": "measured"
     },
     {
@@ -459,12 +890,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 3.6401962861418724,
+      "forward_latency_ms": 4.6170176938176155,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.2",
       "logical_op": "conv2d",
       "module_path": "g_a.2",
-      "probe_rd_cost": 0.013679516835871893,
-      "probe_thr_gain": -4.198857769577221,
+      "probe_rd_cost": 0.014021233186710644,
+      "probe_thr_gain": -6.931067890297879,
       "status": "measured"
     },
     {
@@ -480,12 +911,12 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 3.6755092442035675,
+      "forward_latency_ms": 4.394390620291233,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.2",
       "logical_op": "conv2d",
       "module_path": "g_a.2",
-      "probe_rd_cost": 13.14845400142033,
-      "probe_thr_gain": -4.385102797580392,
+      "probe_rd_cost": 13.380829730735297,
+      "probe_thr_gain": -5.873578015337417,
       "status": "measured"
     },
     {
@@ -501,12 +932,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 3.057563677430153,
+      "forward_latency_ms": 3.191636875271797,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.3",
       "logical_op": "gdn",
       "module_path": "g_a.3",
-      "probe_rd_cost": 0.0008630752563476562,
-      "probe_thr_gain": -1.1259793566305394,
+      "probe_rd_cost": 0.0009845052814372076,
+      "probe_thr_gain": -0.16043680891490109,
       "status": "measured"
     },
     {
@@ -522,12 +953,12 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 3.191242925822735,
+      "forward_latency_ms": 3.460136242210865,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.3",
       "logical_op": "gdn",
       "module_path": "g_a.3",
-      "probe_rd_cost": 12.946947653317705,
-      "probe_thr_gain": -1.8310206991547648,
+      "probe_rd_cost": 13.207787952031547,
+      "probe_thr_gain": -1.43582240094493,
       "status": "measured"
     },
     {
@@ -543,12 +974,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 2.9292143881320953,
+      "forward_latency_ms": 3.4527918323874474,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.4",
       "logical_op": "conv2d",
       "module_path": "g_a.4",
-      "probe_rd_cost": 0.016082942343228514,
-      "probe_thr_gain": -0.44904889564393957,
+      "probe_rd_cost": 0.01698696291777687,
+      "probe_thr_gain": -1.4009360823009223,
       "status": "measured"
     },
     {
@@ -564,12 +995,12 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 3.0708545818924904,
+      "forward_latency_ms": 3.186585381627083,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.4",
       "logical_op": "conv2d",
       "module_path": "g_a.4",
-      "probe_rd_cost": 12.81256752494184,
-      "probe_thr_gain": -1.1960772756281726,
+      "probe_rd_cost": 13.082401440890612,
+      "probe_thr_gain": -0.13644195825232197,
       "status": "measured"
     },
     {
@@ -585,12 +1016,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 3.0341949313879013,
+      "forward_latency_ms": 3.2792072743177414,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.5",
       "logical_op": "gdn",
       "module_path": "g_a.5",
-      "probe_rd_cost": -5.245208740234375e-05,
-      "probe_thr_gain": -1.002729620558183,
+      "probe_rd_cost": 0.00014991242951731078,
+      "probe_thr_gain": -0.5764006396857311,
       "status": "measured"
     },
     {
@@ -606,12 +1037,12 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 3.165668807923794,
+      "forward_latency_ms": 3.3482154831290245,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.5",
       "logical_op": "gdn",
       "module_path": "g_a.5",
-      "probe_rd_cost": 13.340335660012641,
-      "probe_thr_gain": -1.6961395516756115,
+      "probe_rd_cost": 13.610169575961413,
+      "probe_thr_gain": -0.9041931266962622,
       "status": "measured"
     },
     {
@@ -627,12 +1058,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 2.8998199850320816,
+      "forward_latency_ms": 3.0632857233285904,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.6",
       "logical_op": "conv2d",
       "module_path": "g_a.6",
-      "probe_rd_cost": 0.0099770425324375,
-      "probe_thr_gain": -0.2940190785741277,
+      "probe_rd_cost": 0.010800136155870586,
+      "probe_thr_gain": 0.44923766359874095,
       "status": "measured"
     },
     {
@@ -648,12 +1079,12 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 3.0562784522771835,
+      "forward_latency_ms": 3.263331949710846,
       "instance_id": "compressai.models.google.FactorizedPrior:g_a.6",
       "logical_op": "conv2d",
       "module_path": "g_a.6",
-      "probe_rd_cost": 12.838478856118599,
-      "probe_thr_gain": -1.1192009158613758,
+      "probe_rd_cost": 13.10831277206737,
+      "probe_thr_gain": -0.500992043742825,
       "status": "measured"
     },
     {
@@ -669,12 +1100,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 10.351872071623802,
+      "forward_latency_ms": 41.14868305623531,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.0",
       "logical_op": "conv_transpose2d",
       "module_path": "g_s.0",
       "probe_rd_cost": 0.03974199295043945,
-      "probe_thr_gain": -39.59708870880878,
+      "probe_thr_gain": -180.4583286330146,
       "status": "measured"
     },
     {
@@ -690,12 +1121,12 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 10.46747900545597,
+      "forward_latency_ms": 42.73685533553362,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.0",
       "logical_op": "conv_transpose2d",
       "module_path": "g_s.0",
       "probe_rd_cost": 13.186938762664795,
-      "probe_thr_gain": -40.20681436790864,
+      "probe_thr_gain": -188.00222739810263,
       "status": "measured"
     },
     {
@@ -711,12 +1142,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 3.0157817527651787,
+      "forward_latency_ms": 3.181307576596737,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.1",
       "logical_op": "igdn",
       "module_path": "g_s.1",
       "probe_rd_cost": 0.011696815490722656,
-      "probe_thr_gain": -0.9056161767559125,
+      "probe_thr_gain": -0.11137211704567829,
       "status": "measured"
     },
     {
@@ -732,12 +1163,12 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 3.1120963394641876,
+      "forward_latency_ms": 3.296971321105957,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.1",
       "logical_op": "igdn",
       "module_path": "g_s.1",
       "probe_rd_cost": 13.06307315826416,
-      "probe_thr_gain": -1.4135915456143104,
+      "probe_thr_gain": -0.6607807616507078,
       "status": "measured"
     },
     {
@@ -753,12 +1184,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 10.43237280100584,
+      "forward_latency_ms": 44.19581778347492,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.2",
       "logical_op": "conv_transpose2d",
       "module_path": "g_s.2",
       "probe_rd_cost": 0.03404855728149414,
-      "probe_thr_gain": -40.02165978472486,
+      "probe_thr_gain": -194.9323729199707,
       "status": "measured"
     },
     {
@@ -774,12 +1205,12 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 10.544808581471443,
+      "forward_latency_ms": 42.26540867239237,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.2",
       "logical_op": "conv_transpose2d",
       "module_path": "g_s.2",
       "probe_rd_cost": 13.107001781463623,
-      "probe_thr_gain": -40.61466037801385,
+      "probe_thr_gain": -185.76283187015176,
       "status": "measured"
     },
     {
@@ -795,12 +1226,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 3.0059339478611946,
+      "forward_latency_ms": 3.1683286651968956,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.3",
       "logical_op": "igdn",
       "module_path": "g_s.3",
       "probe_rd_cost": 0.012392997741699219,
-      "probe_thr_gain": -0.853677602340597,
+      "probe_thr_gain": -0.049721630535040084,
       "status": "measured"
     },
     {
@@ -816,12 +1247,12 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 3.0981916934251785,
+      "forward_latency_ms": 3.4008603543043137,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.3",
       "logical_op": "igdn",
       "module_path": "g_s.3",
       "probe_rd_cost": 13.184466361999512,
-      "probe_thr_gain": -1.340256675553722,
+      "probe_thr_gain": -1.1542589311585787,
       "status": "measured"
     },
     {
@@ -837,12 +1268,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 10.872876271605492,
+      "forward_latency_ms": 45.67238874733448,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.4",
       "logical_op": "conv_transpose2d",
       "module_path": "g_s.4",
       "probe_rd_cost": 0.04184246063232422,
-      "probe_thr_gain": -42.344931063046864,
+      "probe_thr_gain": -201.94615978429408,
       "status": "measured"
     },
     {
@@ -858,12 +1289,12 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 11.276588775217533,
+      "forward_latency_ms": 45.20147293806076,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.4",
       "logical_op": "conv_transpose2d",
       "module_path": "g_s.4",
       "probe_rd_cost": 26.176953315734863,
-      "probe_thr_gain": -44.47416210648117,
+      "probe_thr_gain": -199.70928583910091,
       "status": "measured"
     },
     {
@@ -879,12 +1310,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 3.51046584546566,
+      "forward_latency_ms": 3.761148080229759,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.5",
       "logical_op": "igdn",
       "module_path": "g_s.5",
       "probe_rd_cost": 0.02479076385498047,
-      "probe_thr_gain": -3.514642940720571,
+      "probe_thr_gain": -2.8656438773095156,
       "status": "measured"
     },
     {
@@ -900,12 +1331,12 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 3.350876271724701,
+      "forward_latency_ms": 3.5648494958877563,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.5",
       "logical_op": "igdn",
       "module_path": "g_s.5",
       "probe_rd_cost": 15.419056415557861,
-      "probe_thr_gain": -2.6729472499072875,
+      "probe_thr_gain": -1.9332156594713084,
       "status": "measured"
     },
     {
@@ -921,12 +1352,12 @@
         "precision": "fp8"
       },
       "category": "low_impact",
-      "forward_latency_ms": 10.302897542715073,
+      "forward_latency_ms": 42.9685739800334,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.6",
       "logical_op": "conv_transpose2d",
       "module_path": "g_s.6",
       "probe_rd_cost": 0.04656791687011719,
-      "probe_thr_gain": -39.338790820194845,
+      "probe_thr_gain": -189.10290269566045,
       "status": "measured"
     },
     {
@@ -942,18 +1373,18 @@
         "precision": "fp8"
       },
       "category": "high_cost",
-      "forward_latency_ms": 10.433209128677845,
+      "forward_latency_ms": 42.31762886047363,
       "instance_id": "compressai.models.google.FactorizedPrior:g_s.6",
       "logical_op": "conv_transpose2d",
       "module_path": "g_s.6",
       "probe_rd_cost": 15.429465770721436,
-      "probe_thr_gain": -40.02607068313842,
+      "probe_thr_gain": -186.01088040840793,
       "status": "measured"
     }
   ],
-  "profile_cost_ms": 19162.480261176825,
+  "profile_cost_ms": 54157.47330151498,
   "rd_cost_formula": "log10(bpp/bpp_ref)+(psnr_ref-psnr)",
-  "records_path": "/hwj/project/fast-compressai/examples/precision_configs/FactorizedPrior/kodak-20261023T044106.023033Z-records.json",
+  "records_path": "/hwj/project/fast-compressai/examples/precision_configs/FactorizedPrior/kodak-20261026T083040.739297Z-records.json",
   "recovery_order": [
     "compressai.models.google.FactorizedPrior:g_a.0",
     "compressai.models.google.FactorizedPrior:g_s.6",
@@ -963,7 +1394,7 @@
     "compressai.models.google.FactorizedPrior:g_s.5",
     "compressai.models.google.FactorizedPrior:g_a.4"
   ],
-  "recovery_path": "/hwj/project/fast-compressai/examples/precision_configs/FactorizedPrior/kodak-20261023T044106.023033Z-recovery.json",
+  "recovery_path": "/hwj/project/fast-compressai/examples/precision_configs/FactorizedPrior/kodak-20261026T083040.739297Z-recovery.json",
   "recovery_steps": [
     {
       "budget_met": false,
@@ -971,7 +1402,7 @@
       "from_precision": null,
       "step": 0,
       "to_precision": null,
-      "validated_rd_cost": 0.3717667394518881
+      "validated_rd_cost": 0.37131421556052463
     },
     {
       "budget_met": false,
@@ -979,7 +1410,7 @@
       "from_precision": "fp8",
       "step": 1,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.33438188319487944
+      "validated_rd_cost": 0.3357052803039551
     },
     {
       "budget_met": false,
@@ -987,7 +1418,7 @@
       "from_precision": "fp8",
       "step": 2,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.2862046409158267
+      "validated_rd_cost": 0.28752803802490234
     },
     {
       "budget_met": false,
@@ -995,7 +1426,7 @@
       "from_precision": "fp8",
       "step": 3,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.2491996932534732
+      "validated_rd_cost": 0.25052309036254883
     },
     {
       "budget_met": false,
@@ -1003,7 +1434,7 @@
       "from_precision": "fp8",
       "step": 4,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.19972068553252592
+      "validated_rd_cost": 0.20104408264160156
     },
     {
       "budget_met": false,
@@ -1011,7 +1442,7 @@
       "from_precision": "fp8",
       "step": 5,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.1677034545449771
+      "validated_rd_cost": 0.16902685165405273
     },
     {
       "budget_met": false,
@@ -1019,7 +1450,7 @@
       "from_precision": "fp8",
       "step": 6,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.15507680659575834
+      "validated_rd_cost": 0.15640020370483398
     },
     {
       "budget_met": true,
@@ -1027,10 +1458,10 @@
       "from_precision": "fp8",
       "step": 7,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.08132602028435822
+      "validated_rd_cost": 0.08150582238897319
     }
   ],
-  "schema_version": 3,
+  "schema_version": 4,
   "selector_version": "caiec-operator-v1",
-  "validated_rd_cost": 0.08132602028435822
+  "validated_rd_cost": 0.08150582238897319
 }

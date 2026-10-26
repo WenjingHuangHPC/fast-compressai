@@ -2,6 +2,7 @@
 
 from .gpu_operator import GpuOperatorProfile, profile_gpu_operator_pair
 from .rd import CalibrationData, FactorizedRDMeasurement, load_kodak_f32, measure_factorized_warpdiv_rd
+from .p_ch import default_p_candidates, sweep_p_ch
 from .schema import ProfileError, ProfileRecord, ProfileSet
 
 __all__ = [
@@ -14,4 +15,6 @@ __all__ = [
     "load_kodak_f32",
     "measure_factorized_warpdiv_rd",
     "profile_gpu_operator_pair",
+    "default_p_candidates",
+    "sweep_p_ch",
 ]

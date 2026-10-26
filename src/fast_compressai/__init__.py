@@ -5,6 +5,7 @@ from .api import AccelerationReport, FastModel, accelerate, compile, optimize
 from .config import AccelerationConfig, CompileConfig, ConfigurationError
 from .configs import PrecisionAssignment, PrecisionConfig, PrecisionConfigError
 from .policies.caiec_precision import Sensitivity, initial_assignments, make_sensitivity, rd_cost, recovery_order, recover_to_budget, thr_gain
+from .policies.p_ch import PChSelection, choose_p_ch, legal_p_candidates
 from .coders import (
     Bitstream,
     BitstreamError,
@@ -22,7 +23,7 @@ from .coders import (
 )
 from .errors import UnsupportedOperationError
 from .policies import PrecisionPolicy, PrecisionPolicyError, PrecisionRequest, PrecisionResolution
-from .profiling import CalibrationData, FactorizedRDMeasurement, GpuOperatorProfile, ProfileError, ProfileRecord, ProfileSet, load_kodak_f32, measure_factorized_warpdiv_rd, profile_gpu_operator_pair
+from .profiling import CalibrationData, FactorizedRDMeasurement, GpuOperatorProfile, ProfileError, ProfileRecord, ProfileSet, default_p_candidates, load_kodak_f32, measure_factorized_warpdiv_rd, profile_gpu_operator_pair, sweep_p_ch
 from .backends.pytorch.bf16_operators import BF16Conv2d, BF16ConvTranspose2d, BF16GDN
 from .backends.pytorch.fp8_operators import FP8Conv2d
 from .operators import (
@@ -97,6 +98,8 @@ __all__ = [
     "profile_gpu_operator_pair",
     "load_kodak_f32",
     "measure_factorized_warpdiv_rd",
+    "default_p_candidates",
+    "sweep_p_ch",
     "PrecisionPolicyError",
     "PrecisionRequest",
     "PrecisionResolution",
@@ -122,6 +125,9 @@ __all__ = [
     "unregister_operator",
     "warp_div_capability",
     "build_balle_catalog",
+    "PChSelection",
+    "choose_p_ch",
+    "legal_p_candidates",
 ]
 
 __version__ = "0.1.0"

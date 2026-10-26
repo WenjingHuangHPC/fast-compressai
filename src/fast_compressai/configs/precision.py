@@ -13,7 +13,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Mapping
 
-PRECISION_CONFIG_SCHEMA_VERSION = 3
+PRECISION_CONFIG_SCHEMA_VERSION = 4
 RD_COST_FORMULA = "log10(bpp/bpp_ref)+(psnr_ref-psnr)"
 
 
@@ -72,6 +72,7 @@ class PrecisionConfig:
     recovery_steps: tuple[Mapping[str, Any], ...] = ()
     records_path: str | None = None
     recovery_path: str | None = None
+    p_ch_selection: Mapping[str, Any] | None = None
     schema_version: int = PRECISION_CONFIG_SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -105,6 +106,8 @@ class PrecisionConfig:
             value = getattr(self, name)
             if value is not None and (not isinstance(value, str) or not value):
                 raise PrecisionConfigError(f"{name} must be a non-empty string or None")
+        if self.p_ch_selection is not None:
+            _json_value(dict(self.p_ch_selection), "p_ch_selection")
         paths = [assignment.module_path for assignment in self.assignments]
         if len(paths) != len(set(paths)):
             raise PrecisionConfigError("precision assignments contain duplicate module paths")
@@ -136,6 +139,7 @@ class PrecisionConfig:
             "recovery_steps": [_json_value(dict(record), "recovery_step") for record in self.recovery_steps],
             "records_path": self.records_path,
             "recovery_path": self.recovery_path,
+            "p_ch_selection": _json_value(dict(self.p_ch_selection), "p_ch_selection") if self.p_ch_selection is not None else None,
             "profile_cost_ms": self.profile_cost_ms,
             "created_utc": self.created_utc,
         }
@@ -147,7 +151,7 @@ class PrecisionConfig:
             "dataset_fingerprint", "dataset_sample_count", "device_type", "device_capability",
             "coder", "p_ch", "epsilon", "rd_cost_formula", "selector_version",
             "catalog_fingerprint", "assignments", "probe_records", "validated_rd_cost", "budget_met",
-            "recovery_order", "recovery_steps", "records_path", "recovery_path", "profile_cost_ms", "created_utc",
+            "recovery_order", "recovery_steps", "records_path", "recovery_path", "p_ch_selection", "profile_cost_ms", "created_utc",
         }
         if not isinstance(value, Mapping) or set(value) != expected:
             raise PrecisionConfigError("precision config has missing or unknown fields")
@@ -177,6 +181,7 @@ class PrecisionConfig:
                 recovery_steps=tuple(value["recovery_steps"]),
                 records_path=value["records_path"],
                 recovery_path=value["recovery_path"],
+                p_ch_selection=value["p_ch_selection"],
                 profile_cost_ms=value["profile_cost_ms"],
                 created_utc=value["created_utc"],
             )

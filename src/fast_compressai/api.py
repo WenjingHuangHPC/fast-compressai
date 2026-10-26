@@ -16,6 +16,7 @@ from .config import AccelerationConfig, CompileConfig, ConfigurationError
 from .configs import PrecisionAssignment, PrecisionConfig, PrecisionConfigError, fingerprint_json, model_fingerprint
 from .policies.caiec_selection import normalize_calibration, select_balle_precision
 from .profiling.rd import CalibrationData, calibration_fingerprint
+from .profiling.p_ch import sweep_p_ch
 from .policies.caiec_selection import select_balle_precision
 from .coders.factorized import FactorizedWarpDivCodec
 from .errors import UnsupportedOperationError
@@ -111,6 +112,9 @@ class AccelerationReport:
     sensitivity_probe_count: int = 0
     unavailable_probe_count: int = 0
     recovered_instance_count: int = 0
+    p_ch_selection_status: str = "explicit"
+    p_ch_selection_reason: str | None = None
+    p_ch_sweep: tuple[Mapping[str, Any], ...] = ()
 
     @property
     def accelerated(self) -> bool:
@@ -163,6 +167,9 @@ def accelerate(
     profile_probe_count = 0
     unavailable_probe_count = 0
     recovered_count = 0
+    p_ch_selection_status = "explicit" if P is not None else "default"
+    p_ch_selection_reason = None
+    p_ch_sweep = ()
     if precision_config_path is not None and calibration_data is not None:
         raise ConfigurationError("do not combine precision_config_path with calibration_data")
     precision_config = None
@@ -204,6 +211,11 @@ def accelerate(
                 p_ch=acceleration_config.p_ch or 1,
                 catalog_fingerprint=catalog.catalog_fingerprint(),
             )
+            p_ch = precision_config.p_ch
+            p_ch_selection_status = "loaded_from_config"
+            if precision_config.p_ch_selection is not None:
+                p_ch_selection_reason = precision_config.p_ch_selection.get("reason")
+                p_ch_sweep = tuple(precision_config.p_ch_selection.get("measurements", ()))
             final_rd_cost = precision_config.validated_rd_cost
             final_budget_met = precision_config.budget_met
             unavailable_probe_count = sum(
@@ -240,6 +252,31 @@ def accelerate(
             )
             precision_selection_result = selection
             runtime_model = selection.model
+            if P is None:
+                p_selection, p_measurements = sweep_p_ch(
+                    runtime_model, calibration_data,
+                    model_name=type(model).__qualname__,
+                    warmup=1, repetitions=1,
+                )
+                p_ch = p_selection.selected_p_ch
+                p_ch_selection_status = p_selection.status
+                p_ch_selection_reason = p_selection.reason
+                p_ch_sweep = tuple(p_measurements)
+                selection = replace(
+                    selection,
+                    config=replace(
+                        selection.config,
+                        p_ch=p_ch,
+                        p_ch_selection={
+                            "status": p_selection.status,
+                            "reason": p_selection.reason,
+                            "selected_p_ch": p_ch,
+                            "relative_error": p_selection.relative_error,
+                            "plateau": dict(p_selection.plateau),
+                            "measurements": list(p_measurements),
+                        },
+                    ),
+                )
             default_root = (
                 Path(precision_config_output_dir)
                 if precision_config_output_dir is not None
@@ -282,7 +319,8 @@ def accelerate(
                 if record.get("status") == "unavailable"
             )
             recovered_count = len(selection.config.recovery_order)
-        p_ch = acceleration_config.p_ch if acceleration_config.p_ch is not None else 1
+        if acceleration_config.p_ch is not None:
+            p_ch = acceleration_config.p_ch
         inventory = catalog.inventory(runtime_model)
         transform_instances = tuple(
             instance for instance in inventory
@@ -401,6 +439,9 @@ def accelerate(
         sensitivity_probe_count=profile_probe_count,
         unavailable_probe_count=unavailable_probe_count,
         recovered_instance_count=recovered_count,
+        p_ch_selection_status=p_ch_selection_status,
+        p_ch_selection_reason=p_ch_selection_reason,
+        p_ch_sweep=p_ch_sweep,
     )
     wrapped.acceleration_config = acceleration_config
     wrapped.acceleration_report = report

@@ -116,7 +116,10 @@ def main() -> None:
         help="local CompressAI checkpoint; no network download is performed",
     )
     parser.add_argument("--quality", type=int, default=1, help="CompressAI Balle model quality")
-    parser.add_argument("--p-ch", type=int, default=4, help="latent channels per GA-ANS chunk")
+    parser.add_argument(
+        "--p-ch", type=int, default=None,
+        help="latent channels per GA-ANS chunk; omit with --kodak to auto-select P",
+    )
     parser.add_argument("--repeats", type=int, default=10, help="timed repetitions after warmup")
     parser.add_argument("--precision-budget", type=float, default=None, help="CAIEC RD Cost epsilon for Kodak selection")
     parser.add_argument("--precision-config", type=Path, help="reuse a saved per-operator precision config")
@@ -272,6 +275,11 @@ def main() -> None:
         } if calibration is not None else None),
         "precision_config_path": fast_model.acceleration_report.precision_config_path,
         "acceleration_report": fast_model.acceleration_report.to_dict(),
+        "p_ch_selection": {
+            "status": fast_model.acceleration_report.p_ch_selection_status,
+            "reason": fast_model.acceleration_report.p_ch_selection_reason,
+            "sweep": list(fast_model.acceleration_report.p_ch_sweep),
+        },
     }
     report_root.mkdir(parents=True, exist_ok=True)
     report_path.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")

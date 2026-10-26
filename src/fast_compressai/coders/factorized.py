@@ -30,10 +30,14 @@ class FactorizedWarpDivCodec:
             raise CoderInputError("entropy tables are not initialized; call model.update() before accelerate()")
         return cdfs.contiguous(), lengths.contiguous(), offsets.contiguous()
 
-    def compress(self, x: torch.Tensor):
+    def compress(self, x: torch.Tensor, timing: dict[str, float] | None = None):
         if not isinstance(x, torch.Tensor) or x.device.type != "cuda" or x.ndim != 4:
             raise CoderInputError("warp_div FactorizedPrior.compress expects a CUDA NCHW tensor")
         with torch.no_grad():
+            start = torch.cuda.Event(enable_timing=True) if timing is not None else None
+            end = torch.cuda.Event(enable_timing=True) if timing is not None else None
+            if timing is not None:
+                start.record()
             y = self.model.g_a(x)
             entropy = self.model.entropy_bottleneck
             if y.size(1) != entropy.channels:
@@ -43,14 +47,23 @@ class FactorizedWarpDivCodec:
             medians = entropy._extend_ndims(entropy._get_medians().detach(), y.ndim - 2)
             medians = medians.expand(y.size(0), *([-1] * (y.ndim - 1)))
             symbols = entropy.quantize(y, "symbols", medians)
+            if timing is not None:
+                end.record()
+                end.synchronize()
+                timing["compress_inference_ms"] = float(start.elapsed_time(end))
+                start.record()
             payload = self.backend.encode(
                 symbols.reshape(y.size(0), -1).to(torch.int32).contiguous(),
                 indexes.reshape(y.size(0), -1).to(torch.int32).contiguous(),
                 cdfs, lengths, offsets, p_ch=self.p_ch,
             )
+            if timing is not None:
+                end.record()
+                end.synchronize()
+                timing["compress_codec_ms"] = float(start.elapsed_time(end))
             return {"strings": [payload], "shape": tuple(y.shape[-2:])}
 
-    def decompress(self, strings, shape):
+    def decompress(self, strings, shape, timing: dict[str, float] | None = None):
         if (not isinstance(strings, (list, tuple)) or len(strings) != 1
                 or not isinstance(strings[0], WarpDivPayload)):
             raise CoderInputError("warp_div decompress expects strings=[WarpDivPayload]")
@@ -70,11 +83,25 @@ class FactorizedWarpDivCodec:
         with torch.no_grad():
             output_shape = (payload.batch, channels, *shape)
             indexes = entropy._build_indexes(output_shape, device=cdfs.device)
+            start = torch.cuda.Event(enable_timing=True) if timing is not None else None
+            end = torch.cuda.Event(enable_timing=True) if timing is not None else None
+            if timing is not None:
+                start.record()
             symbols = self.backend.decode(
                 payload, indexes.reshape(payload.batch, -1).contiguous(),
                 cdfs, lengths, offsets,
             ).reshape(output_shape)
+            if timing is not None:
+                end.record()
+                end.synchronize()
+                timing["decompress_codec_ms"] = float(start.elapsed_time(end))
+                start.record()
             medians = entropy._extend_ndims(entropy._get_medians().detach(), len(shape))
             medians = medians.expand(payload.batch, *([-1] * (len(shape) + 1)))
             y_hat = entropy.dequantize(symbols, medians, medians.dtype)
-            return {"x_hat": self.model.g_s(y_hat).clamp_(0, 1)}
+            result = {"x_hat": self.model.g_s(y_hat).clamp_(0, 1)}
+            if timing is not None:
+                end.record()
+                end.synchronize()
+                timing["decompress_inference_ms"] = float(start.elapsed_time(end))
+            return result

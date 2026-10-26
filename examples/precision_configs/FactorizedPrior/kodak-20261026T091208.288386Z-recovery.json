@@ -11,7 +11,7 @@
     "compressai.models.google.FactorizedPrior:g_s.5",
     "compressai.models.google.FactorizedPrior:g_a.4"
   ],
-  "selection_config": "/hwj/project/fast-compressai/examples/precision_configs/FactorizedPrior/kodak-20261023T044106.023033Z.json",
+  "selection_config": "/hwj/project/fast-compressai/examples/precision_configs/FactorizedPrior/kodak-20261026T091208.288386Z.json",
   "steps": [
     {
       "budget_met": false,
@@ -19,7 +19,7 @@
       "from_precision": null,
       "step": 0,
       "to_precision": null,
-      "validated_rd_cost": 0.3717667394518881
+      "validated_rd_cost": 0.37131421556052463
     },
     {
       "budget_met": false,
@@ -27,7 +27,7 @@
       "from_precision": "fp8",
       "step": 1,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.33438188319487944
+      "validated_rd_cost": 0.3357052803039551
     },
     {
       "budget_met": false,
@@ -35,7 +35,7 @@
       "from_precision": "fp8",
       "step": 2,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.2862046409158267
+      "validated_rd_cost": 0.28752803802490234
     },
     {
       "budget_met": false,
@@ -43,7 +43,7 @@
       "from_precision": "fp8",
       "step": 3,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.2491996932534732
+      "validated_rd_cost": 0.25052309036254883
     },
     {
       "budget_met": false,
@@ -51,7 +51,7 @@
       "from_precision": "fp8",
       "step": 4,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.19972068553252592
+      "validated_rd_cost": 0.20104408264160156
     },
     {
       "budget_met": false,
@@ -59,7 +59,7 @@
       "from_precision": "fp8",
       "step": 5,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.1677034545449771
+      "validated_rd_cost": 0.16902685165405273
     },
     {
       "budget_met": false,
@@ -67,7 +67,7 @@
       "from_precision": "fp8",
       "step": 6,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.15507680659575834
+      "validated_rd_cost": 0.15640020370483398
     },
     {
       "budget_met": true,
@@ -75,8 +75,8 @@
       "from_precision": "fp8",
       "step": 7,
       "to_precision": "fp16",
-      "validated_rd_cost": 0.08132602028435822
+      "validated_rd_cost": 0.08150582238897319
     }
   ],
-  "validated_rd_cost": 0.08132602028435822
+  "validated_rd_cost": 0.08150582238897319
 }

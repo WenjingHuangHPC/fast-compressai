@@ -1,0 +1,594 @@
+{
+  "kind": "fast_compressai_precision_records",
+  "records": [
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm",
+        "logical_op": "conv2d",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 3.0150609090924263,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.0",
+      "logical_op": "conv2d",
+      "module_path": "g_a.0",
+      "probe_rd_cost": 0.058359994597994555,
+      "probe_thr_gain": 0.5658745718191047,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-im2col",
+        "logical_op": "conv2d",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 3.384321928024292,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.0",
+      "logical_op": "conv2d",
+      "module_path": "g_a.0",
+      "probe_rd_cost": 19.567897979407196,
+      "probe_thr_gain": -1.2019039320668479,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm-gdn",
+        "logical_op": "gdn",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 3.5171974450349808,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.1",
+      "logical_op": "gdn",
+      "module_path": "g_a.1",
+      "probe_rd_cost": -0.0019882814611458296,
+      "probe_thr_gain": -1.8380243743049425,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-triton-gdn",
+        "logical_op": "gdn",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 3.382704220712185,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.1",
+      "logical_op": "gdn",
+      "module_path": "g_a.1",
+      "probe_rd_cost": 13.378323712570806,
+      "probe_thr_gain": -1.1941594151389734,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm",
+        "logical_op": "conv2d",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 4.621959291398525,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.2",
+      "logical_op": "conv2d",
+      "module_path": "g_a.2",
+      "probe_rd_cost": 0.014021233186710644,
+      "probe_thr_gain": -7.126896320669752,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-im2col",
+        "logical_op": "conv2d",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 4.010006785392761,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.2",
+      "logical_op": "conv2d",
+      "module_path": "g_a.2",
+      "probe_rd_cost": 13.380829730735297,
+      "probe_thr_gain": -4.197270852361826,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm-gdn",
+        "logical_op": "gdn",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 3.2082311809062958,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.3",
+      "logical_op": "gdn",
+      "module_path": "g_a.3",
+      "probe_rd_cost": 0.0009845052814372076,
+      "probe_thr_gain": -0.35889743658336815,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-triton-gdn",
+        "logical_op": "gdn",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 3.476855345070362,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.3",
+      "logical_op": "gdn",
+      "module_path": "g_a.3",
+      "probe_rd_cost": 13.207787952031547,
+      "probe_thr_gain": -1.644892975476652,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm",
+        "logical_op": "conv2d",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 3.169344738125801,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.4",
+      "logical_op": "conv2d",
+      "module_path": "g_a.4",
+      "probe_rd_cost": 0.01698696291777687,
+      "probe_thr_gain": -0.172734765422474,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-im2col",
+        "logical_op": "conv2d",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 3.3574188128113747,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.4",
+      "logical_op": "conv2d",
+      "module_path": "g_a.4",
+      "probe_rd_cost": 13.082401440890612,
+      "probe_thr_gain": -1.0731095391506065,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm-gdn",
+        "logical_op": "gdn",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 3.0896998941898346,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.5",
+      "logical_op": "gdn",
+      "module_path": "g_a.5",
+      "probe_rd_cost": 0.00014991242951731078,
+      "probe_thr_gain": 0.20855228042552487,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-triton-gdn",
+        "logical_op": "gdn",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 3.299782983958721,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.5",
+      "logical_op": "gdn",
+      "module_path": "g_a.5",
+      "probe_rd_cost": 13.610169575961413,
+      "probe_thr_gain": -0.7971871588406219,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm",
+        "logical_op": "conv2d",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 3.0772872269153595,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.6",
+      "logical_op": "conv2d",
+      "module_path": "g_a.6",
+      "probe_rd_cost": 0.010800136155870586,
+      "probe_thr_gain": 0.26797595435454713,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-im2col",
+        "logical_op": "conv2d",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 3.146698698401451,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_a.6",
+      "logical_op": "conv2d",
+      "module_path": "g_a.6",
+      "probe_rd_cost": 13.10831277206737,
+      "probe_thr_gain": -0.06432044555016714,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm",
+        "logical_op": "conv_transpose2d",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 40.57629778981209,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.0",
+      "logical_op": "conv_transpose2d",
+      "module_path": "g_s.0",
+      "probe_rd_cost": 0.03974199295043945,
+      "probe_thr_gain": -179.2525837349221,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-transpose-scatter",
+        "logical_op": "conv_transpose2d",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 43.37657243013382,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.0",
+      "logical_op": "conv_transpose2d",
+      "module_path": "g_s.0",
+      "probe_rd_cost": 13.186938762664795,
+      "probe_thr_gain": -192.65845400104712,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm-gdn",
+        "logical_op": "igdn",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 3.148484043776989,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.1",
+      "logical_op": "igdn",
+      "module_path": "g_s.1",
+      "probe_rd_cost": 0.011696815490722656,
+      "probe_thr_gain": -0.07286750309232914,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-triton-gdn",
+        "logical_op": "igdn",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 3.291085362434387,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.1",
+      "logical_op": "igdn",
+      "module_path": "g_s.1",
+      "probe_rd_cost": 13.06307315826416,
+      "probe_thr_gain": -0.7555486766360044,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm",
+        "logical_op": "conv_transpose2d",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 49.30455517023802,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.2",
+      "logical_op": "conv_transpose2d",
+      "module_path": "g_s.2",
+      "probe_rd_cost": 0.03404855728149414,
+      "probe_thr_gain": -221.03773023680043,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-transpose-scatter",
+        "logical_op": "conv_transpose2d",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 45.52645143121481,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.2",
+      "logical_op": "conv_transpose2d",
+      "module_path": "g_s.2",
+      "probe_rd_cost": 13.107001781463623,
+      "probe_thr_gain": -202.95065840177222,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm-gdn",
+        "logical_op": "igdn",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 3.178236074745655,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.3",
+      "logical_op": "igdn",
+      "module_path": "g_s.3",
+      "probe_rd_cost": 0.012392997741699219,
+      "probe_thr_gain": -0.21530062789249005,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-triton-gdn",
+        "logical_op": "igdn",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 3.400741145014763,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.3",
+      "logical_op": "igdn",
+      "module_path": "g_s.3",
+      "probe_rd_cost": 13.184466361999512,
+      "probe_thr_gain": -1.2805083266773418,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm",
+        "logical_op": "conv_transpose2d",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 53.01559157669544,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.4",
+      "logical_op": "conv_transpose2d",
+      "module_path": "g_s.4",
+      "probe_rd_cost": 0.04184246063232422,
+      "probe_thr_gain": -238.80372786484708,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-transpose-scatter",
+        "logical_op": "conv_transpose2d",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 46.52512539178133,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.4",
+      "logical_op": "conv_transpose2d",
+      "module_path": "g_s.4",
+      "probe_rd_cost": 26.176953315734863,
+      "probe_thr_gain": -207.7316514375031,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm-gdn",
+        "logical_op": "igdn",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 3.7807179614901543,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.5",
+      "logical_op": "igdn",
+      "module_path": "g_s.5",
+      "probe_rd_cost": 0.02479076385498047,
+      "probe_thr_gain": -3.09958701005214,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-triton-gdn",
+        "logical_op": "igdn",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 3.342914395034313,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.5",
+      "logical_op": "igdn",
+      "module_path": "g_s.5",
+      "probe_rd_cost": 15.419056415557861,
+      "probe_thr_gain": -1.003671941778863,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "pytorch-scaled-mm",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-scaled-mm",
+        "logical_op": "conv_transpose2d",
+        "precision": "fp8"
+      },
+      "category": "low_impact",
+      "forward_latency_ms": 41.12440813332796,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.6",
+      "logical_op": "conv_transpose2d",
+      "module_path": "g_s.6",
+      "probe_rd_cost": 0.04656791687011719,
+      "probe_thr_gain": -181.87657498595553,
+      "status": "measured"
+    },
+    {
+      "candidate_key": {
+        "backend": "triton",
+        "config": {
+          "alignment": 16,
+          "compute_dtype": "bf16",
+          "scale_mode": "per_tensor_symmetric"
+        },
+        "implementation": "fp8-e4m3fn-transpose-scatter",
+        "logical_op": "conv_transpose2d",
+        "precision": "fp8"
+      },
+      "category": "high_cost",
+      "forward_latency_ms": 48.52480813860893,
+      "instance_id": "compressai.models.google.FactorizedPrior:g_s.6",
+      "logical_op": "conv_transpose2d",
+      "module_path": "g_s.6",
+      "probe_rd_cost": 15.429465770721436,
+      "probe_thr_gain": -217.30481511629833,
+      "status": "measured"
+    }
+  ],
+  "selection_config": "/hwj/project/fast-compressai/examples/precision_configs/FactorizedPrior/kodak-20261026T091208.288386Z.json"
+}

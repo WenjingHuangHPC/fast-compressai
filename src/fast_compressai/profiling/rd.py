@@ -90,8 +90,12 @@ class FactorizedRDMeasurement:
     forward_latency_ms: float
     compress_latency_ms: float
     decompress_latency_ms: float
-    sample_count: int
-    record: ProfileRecord
+    compress_inference_ms: float = 0.0
+    compress_codec_ms: float = 0.0
+    decompress_codec_ms: float = 0.0
+    decompress_inference_ms: float = 0.0
+    sample_count: int = 0
+    record: ProfileRecord | None = None
 
 
 def measure_factorized_warpdiv_rd(
@@ -119,6 +123,10 @@ def measure_factorized_warpdiv_rd(
     forward_times: list[float] = []
     compress_times: list[float] = []
     decompress_times: list[float] = []
+    compress_inference_times: list[float] = []
+    compress_codec_times: list[float] = []
+    decompress_codec_times: list[float] = []
+    decompress_inference_times: list[float] = []
     total_bits = 0
     total_pixels = 0
     squared_error = 0.0
@@ -138,14 +146,20 @@ def measure_factorized_warpdiv_rd(
                 model(sample)
                 torch.cuda.synchronize(device)
                 forward_times.append((time.perf_counter() - start) * 1000.0)
+                timing: dict[str, float] = {}
                 start = time.perf_counter()
-                encoded = codec.compress(sample)
+                encoded = codec.compress(sample, timing=timing)
                 torch.cuda.synchronize(device)
                 compress_times.append((time.perf_counter() - start) * 1000.0)
+                compress_inference_times.append(timing["compress_inference_ms"])
+                compress_codec_times.append(timing["compress_codec_ms"])
+                timing = {}
                 start = time.perf_counter()
-                decoded = codec.decompress(encoded["strings"], encoded["shape"])["x_hat"]
+                decoded = codec.decompress(encoded["strings"], encoded["shape"], timing=timing)["x_hat"]
                 torch.cuda.synchronize(device)
                 decompress_times.append((time.perf_counter() - start) * 1000.0)
+                decompress_codec_times.append(timing["decompress_codec_ms"])
+                decompress_inference_times.append(timing["decompress_inference_ms"])
                 payload = encoded["strings"][0]
                 total_bits += payload.packed.numel() * 8
                 total_pixels += sample.numel()
@@ -183,6 +197,12 @@ def measure_factorized_warpdiv_rd(
         "forward_latency_ms_median": statistics.median(forward_times),
         "compress_latency_ms_median": statistics.median(compress_times),
         "decompress_latency_ms_median": statistics.median(decompress_times),
+        "compress_inference_ms_median": statistics.median(compress_inference_times),
+        "compress_codec_ms_median": statistics.median(compress_codec_times),
+        "decompress_codec_ms_median": statistics.median(decompress_codec_times),
+        "decompress_inference_ms_median": statistics.median(decompress_inference_times),
+        "inference_total_ms_median": statistics.median(compress_inference_times) + statistics.median(decompress_inference_times),
+        "codec_total_ms_median": statistics.median(compress_codec_times) + statistics.median(decompress_codec_times),
         "quality_metric": "caiec_rd_cost",
         "quality_unit": "epsilon",
     }
@@ -200,5 +220,9 @@ def measure_factorized_warpdiv_rd(
         forward_latency_ms=statistics.median(forward_times),
         compress_latency_ms=statistics.median(compress_times),
         decompress_latency_ms=statistics.median(decompress_times),
+        compress_inference_ms=statistics.median(compress_inference_times),
+        compress_codec_ms=statistics.median(compress_codec_times),
+        decompress_codec_ms=statistics.median(decompress_codec_times),
+        decompress_inference_ms=statistics.median(decompress_inference_times),
         sample_count=len(samples), record=record,
     )
